@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Tuition's COS 110 - Day 3 Support Hub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .support-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .support-section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .support-section h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .video-placeholder {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 1rem 0;
+        }
+
+        .quick-start-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .quick-start-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .quick-start-card h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .codespaces-btn {
+            display: inline-block;
+            background: #238636;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 1rem 0;
+            transition: background-color 0.2s;
+        }
+
+        .codespaces-btn:hover {
+            background: #196127;
+            color: white;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 1rem 0;
+            transition: background-color 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            color: white;
+        }
+
+        .faq-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #374151;
+        }
+
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .command-table th,
+        .command-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .command-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        .command-table code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 0.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .warning-box {
+            background: #fef3cd;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .success-box {
+            background: #dcfce7;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="https://ezycourse.b-cdn.net/4009/cmfq4efvr0496dp9nbr9nfago.png" alt="Swift Tuition">
+            <div>
+                <h2>Swift Tuition</h2>
+                <p class="subtitle">Day 3: Support Hub</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">📚 Learning Content</a></li>
+                <li><a href="quiz.html">🧪 Interactive Quiz</a></li>
+                <li><a href="#project">💻 Coding Project</a></li>
+                <li><a href="support.html" class="active">🆘 Support Hub</a></li>
+                <li><a href="#video-intro">🎬 Video Tutorial</a></li>
+                <li><a href="#quick-start">🚀 Quick Start</a></li>
+                <li><a href="#local-setup">💻 Local Setup</a></li>
+                <li><a href="#community">💬 Community</a></li>
+                <li><a href="#faq">❓ FAQ</a></li>
+                <li><a href="#testing">📋 Testing Guide</a></li>
+                <li><a href="#contact">📞 Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p><strong>Contact Us:</strong></p>
+            <p>📧 admin@swifttuition.co.za</p>
+            <p>📱 +27 73 499 6948</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="support-container">
+            <header class="support-header">
+                <h1>🎵 Day 3 Support Hub</h1>
+                <h2>Maître Gims Music Studio Management System</h2>
+                <p>Your guide to mastering classes and object-oriented programming!</p>
+            </header>
+
+            <!-- Video Introduction -->
+            <section class="support-section" id="video-intro">
+                <h2>🎬 Getting Started Video</h2>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <h3>📹 Day 3 Project Introduction</h3>
+                        <p>Video tutorial coming soon!</p>
+                        <p><em>This will be a YouTube embed showing OOP concepts and project overview</em></p>
+                        <!-- Placeholder for YouTube embed -->
+                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" ... ></iframe> -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Start -->
+            <section class="support-section" id="quick-start">
+                <h2>🚀 Quick Start Guide</h2>
+
+                <div class="quick-start-grid">
+                    <div class="quick-start-card">
+                        <h3>Option 1: Online (Recommended)</h3>
+                        <p>Work in your browser with zero setup:</p>
+                        <a href="https://codespaces.new/SwiftTuition/swifttuition-cos110-day3-maitre-gims-studio" class="codespaces-btn" target="_blank">🚀 Open in GitHub Codespaces</a>
+                        <p><small>✅ No downloads needed<br>✅ Pre-configured environment<br>✅ Works on any device</small></p>
+                    </div>
+
+                    <div class="quick-start-card">
+                        <h3>Option 2: Download Locally</h3>
+                        <p>Want to work offline? Download the project:</p>
+                        <div style="background: #f1f5f9; padding: 1rem; border-radius: 6px; margin: 0.5rem 0;">
+                            <code style="display: block; margin: 0.2rem 0;">git clone https://github.com/SwiftTuition/swifttuition-cos110-day3-maitre-gims-studio.git</code>
+                            <code style="display: block; margin: 0.2rem 0;">cd swifttuition-cos110-day3-maitre-gims-studio</code>
+                            <code style="display: block; margin: 0.2rem 0;">make demo</code>
+                        </div>
+                        <p><small>⚠️ Requires: g++, make, git installed</small></p>
+                    </div>
+
+                    <div class="quick-start-card">
+                        <h3>Step 2: Understand Classes</h3>
+                        <ul>
+                            <li>Read the <strong>Maître Gims story</strong> (it's educational!)</li>
+                            <li>Review class structure in <code>docs/INSTRUCTIONS.md</code></li>
+                            <li>Examine starter code in <code>src/musictrack.h</code></li>
+                            <li>Check the <code>SOLUTION_EXPLANATIONS.md</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="quick-start-card">
+                        <h3>Step 3: Start Coding</h3>
+                        <div class="warning-box">
+                            <strong>First Command:</strong><br>
+                            <code>make demo</code><br>
+                            <em>Test your environment setup</em>
+                        </div>
+                        <div class="success-box" style="margin-top: 1rem;">
+                            <strong>Test Commands:</strong><br>
+                            <code>make test-basic</code> - Test your progress<br>
+                            <code>make test</code> - Complete validation
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Local Development Setup -->
+            <section class="support-section" id="local-setup">
+                <h2>💻 Local Development Setup</h2>
+                <p>Want to work offline or need a local environment? Here's how to set everything up:</p>
+
+                <div class="quick-start-grid">
+                    <div class="quick-start-card">
+                        <h3>🖥️ Windows Setup</h3>
+                        <p><strong>Install Required Tools:</strong></p>
+                        <ol>
+                            <li><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a></li>
+                            <li><a href="https://www.msys2.org/" target="_blank" rel="noopener">MSYS2</a> (includes g++ and make)</li>
+                            <li>Or <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> with C++ extension</li>
+                        </ol>
+                        <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-make</code>
+                        </div>
+                    </div>
+
+                    <div class="quick-start-card">
+                        <h3>🐧 Linux/Ubuntu Setup</h3>
+                        <p><strong>Install via Package Manager:</strong></p>
+                        <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <code style="display: block;">sudo apt update</code>
+                            <code style="display: block;">sudo apt install build-essential git valgrind</code>
+                        </div>
+                        <p>Then clone and build:</p>
+                        <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <code style="display: block;">git clone https://github.com/SwiftTuition/swifttuition-cos110-day3-maitre-gims-studio.git</code>
+                            <code style="display: block;">cd swifttuition-cos110-day3-maitre-gims-studio && make demo</code>
+                        </div>
+                    </div>
+
+                    <div class="quick-start-card">
+                        <h3>🍎 macOS Setup</h3>
+                        <p><strong>Install Command Line Tools:</strong></p>
+                        <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <code style="display: block;">xcode-select --install</code>
+                            <code style="display: block;">brew install git</code>
+                        </div>
+                        <p>Or install <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> first, then:</p>
+                        <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <code>brew install gcc make valgrind</code>
+                        </div>
+                    </div>
+
+                    <div class="quick-start-card">
+                        <h3>✅ Verify Installation</h3>
+                        <p><strong>Test your setup:</strong></p>
+                        <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <code style="display: block;">g++ --version</code>
+                            <code style="display: block;">make --version</code>
+                            <code style="display: block;">git --version</code>
+                        </div>
+                        <div class="success-box" style="margin-top: 0.5rem;">
+                            <strong>Success!</strong> All commands should return version information.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>💡 Pro Tip:</strong> If local setup seems complicated, just use GitHub Codespaces! It's already configured and works in your browser with zero setup required.
+                </div>
+            </section>
+
+            <!-- Community Support -->
+            <section class="support-section" id="community">
+                <h2>💬 Join the Community</h2>
+                <p>Connect with fellow students, get help, and collaborate on the 10-day programme!</p>
+
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="https://chat.whatsapp.com/HH45aFDchGRByVpdIwHtsj" class="whatsapp-btn" target="_blank">
+                        💬 Join WhatsApp Group
+                    </a>
+                </div>
+
+                <div class="success-box">
+                    <strong>Group Benefits:</strong>
+                    <ul>
+                        <li>Peer support and collaboration</li>
+                        <li>Course announcements and updates</li>
+                        <li>Study coordination and tips</li>
+                        <li>Direct access to instructors</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="support-section" id="faq">
+                <h2>❓ Common Issues & Solutions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">🔧 My code won't compile - "undefined reference" errors</div>
+                    <div class="faq-answer">
+                        You haven't implemented all required methods yet. Check your <code>musictrack.cpp</code> file for <code>TODO</code> comments and implement the missing functions.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">❌ "Expected ';' after class definition" error</div>
+                    <div class="faq-answer">
+                        Don't forget the semicolon after the closing brace of your class definition:<br>
+                        <code>class MusicTrack { ... };</code> ← The semicolon is mandatory!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">💥 Segmentation fault when running</div>
+                    <div class="faq-answer">
+                        You're likely accessing uninitialized member variables. Make sure your constructor properly initializes all member variables.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">🔍 What's the scope resolution operator (::)?</div>
+                    <div class="faq-answer">
+                        The <code>::</code> operator tells C++ which class a function belongs to when implementing it outside the class definition. Example: <code>MusicTrack::getTitle()</code>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">📝 Difference between getter and setter functions?</div>
+                    <div class="faq-answer">
+                        Getters retrieve values without modifying them (marked <code>const</code>). Setters modify values and can include validation logic.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">🎵 I don't understand the Maître Gims references</div>
+                    <div class="faq-answer">
+                        Don't worry! The music theme is just for engagement. Focus on the technical requirements in the instructions document.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testing Commands -->
+            <section class="support-section" id="testing">
+                <h2>📋 Testing Commands Reference</h2>
+
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Purpose</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>make demo</code></td>
+                            <td>Compile and run your program</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><code>make test-basic</code></td>
+                            <td>Test core functionality</td>
+                            <td>40%</td>
+                        </tr>
+                        <tr>
+                            <td><code>make test-edge</code></td>
+                            <td>Test edge cases & validation</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td><code>make test-memory</code></td>
+                            <td>Memory management tests</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td><code>make test-implementation</code></td>
+                            <td>Code quality tests</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td><code>make test</code></td>
+                            <td>Complete test suite</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td><code>make clean</code></td>
+                            <td>Clean up build files</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><code>make help</code></td>
+                            <td>Show all available commands</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="success-box">
+                    <strong>Pro Testing Tips:</strong>
+                    <ul>
+                        <li>✅ Start with <code>make test-basic</code> and get that passing first</li>
+                        <li>⚠️ Fix compilation errors before worrying about test failures</li>
+                        <li>🧠 Use <code>make test-memory</code> to check object creation and cleanup</li>
+                        <li>🎯 Aim for 100% on <code>make test</code> before submission</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="support-section" id="contact">
+                <h2>📞 Get Additional Help</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>🐛 Technical Issues</h3>
+                        <p>Found a bug or have suggestions for improvement?</p>
+                        <a href="mailto:christian@swifttuition.co.za?subject=COS110%20Day%203%20Bug%20Report&body=Please%20describe%20the%20issue%20you%20encountered:"
+                           class="contact-btn" target="_blank">📧 Report Bug/Suggestion</a>
+                        <p><small>Please include error messages and screenshots</small></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>📚 Course Questions</h3>
+                        <p>Need help with course content or Swift Tuition?</p>
+                        <a href="mailto:admin@swifttuition.co.za?subject=COS110%20Course%20Question"
+                           class="contact-btn" target="_blank">📧 Course Admin</a>
+                        <a href="https://wa.me/27734996948?text=Hi,%20I%20have%20a%20question%20about%20the%20COS110%20course"
+                           class="contact-btn" style="background: #25d366;" target="_blank">📱 WhatsApp Business</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Link -->
+            <section class="support-section" id="project">
+                <h2>💻 Coding Project Access</h2>
+                <p>Ready to build the Maître Gims Music Studio Management System?</p>
+
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="https://github.com/SwiftTuition/swifttuition-cos110-day3-maitre-gims-studio" class="codespaces-btn" style="font-size: 1.2rem; padding: 1.5rem 3rem;" target="_blank">
+                        🚀 Launch Coding Project
+                    </a>
+                </div>
+
+                <div class="success-box">
+                    <strong>Project Repository:</strong> <a href="https://github.com/SwiftTuition/swifttuition-cos110-day3-maitre-gims-studio" target="_blank" rel="noopener">https://github.com/SwiftTuition/swifttuition-cos110-day3-maitre-gims-studio</a>
+                </div>
+            </section>
+
+            <!-- Final Reminders -->
+            <section class="support-section">
+                <h2>🎵 Final Reminders</h2>
+
+                <div class="success-box">
+                    <h3>The Music Studio Way:</h3>
+                    <ul>
+                        <li><strong>Master the Basics:</strong> "Every great song starts with understanding the fundamentals!"</li>
+                        <li><strong>Practice Makes Perfect:</strong> "Code like you're composing a hit track!"</li>
+                        <li><strong>Debug with Rhythm:</strong> "Every error is just a note that needs tuning!"</li>
+                    </ul>
+                </div>
+
+                <h3>✅ Success Checklist:</h3>
+                <ul>
+                    <li>☐ Read the Maître Gims story (it's actually educational)</li>
+                    <li>☐ Understand class structure and member functions</li>
+                    <li>☐ Implement one feature at a time</li>
+                    <li>☐ Test frequently with <code>make</code> commands</li>
+                    <li>☐ Use the solution explanations when stuck</li>
+                    <li>☐ Ask for help in the WhatsApp group</li>
+                    <li>☐ Don't give up - OOP concepts build on each other!</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

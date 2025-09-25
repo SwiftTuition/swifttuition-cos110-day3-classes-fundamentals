@@ -1,0 +1,90 @@
+# 🎤 Maître Gims Music Studio - Git Ignore
+# "Ignore the noise, keep the music!" - Studio Engineer
+
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.app
+artist_manager
+yorozuya
+
+# Build directories
+obj/
+build/
+
+# Test executables
+tests/test_basic
+tests/test_edge
+tests/test_memory
+tests/test_implementation
+
+# IDE and editor files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/c_cpp_properties.json
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Coverage and profiling
+*.gcno
+*.gcda
+*.gcov
+gmon.out
+
+# Valgrind output
+vgcore.*
+valgrind-out.txt
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Log files
+*.log
+
+# Core dumps
+core
+core.*
+
+# IDE specific
+.idea/
+*.pro.user
+*.vcxproj.user
+
+# Local environment
+.env
+.env.local
+
+# Package files
+*.zip
+*.tar.gz
+*.7z
+
+# Solution files (keep these private)
+solution/artist_solution
+solution/test_solution
+
+# Temporary build artifacts
+*.d
+*.dep
